@@ -37,28 +37,57 @@
     \end{center}
 \end{titlepage}
 
-\tableofcontents
+\tableofcontents%Tabla de contenidos 
 
 \newpage
 
-\section{Introduccion}\label{intro}
-Uno de los componentes más importantes dentro de la computación es la memoria, la cual esta estrechamente relacionada con el concepto de almacenamiento de información que sera procesada posteriormente.En este documento se introduce de manera clara y sencilla, ciertos conceptos que son de vital importancia para entender la definición, el funcionamiento y tipos de memoria que usa el computador para realizar cualquier proceso o tarea.
+\section{Introducción}\label{intro}
+Uno de los componentes más importantes dentro de la computación es la memoria, la cual esta estrechamente relacionada con el concepto de almacenamiento de información y datos que contienen todos los programas.En este documento se introduce de manera clara y sencilla, ciertos conceptos que son de vital importancia para entender la definición, el funcionamiento y tipos de memoria que usa el computador para realizar cualquier proceso o tarea.
 
-\section{Que es la memoria del computador.} \label{contenido}
+\section{Sección de contenido}
+\subsection{Que es la memoria del computador.} \label{contenido}
 
-\section{Tipos de memoria.} \label{contenido}%Explicar usos de cada memoria
-\subsection{Memoria RAM}
-\subsection{Memoria ROM}
-\subsection{Disco Duro}
-\subsection{Memoria cache}
+\subsection{Tipos de memoria.} \label{contenido}%Explicar usos de cada memoria
 
+En una computadora existen diferentes tipos de memoria cada una con tareas especificas,esto con el fin de realizar de manera mas eficiente y rapida el proceso busqueda y utilizacion de recursos.Dentro de esto se encuentran los siguientes tipos de memoria:
 
-\section{Como se gestiona la memoria en un computador.} \label{contenido}
+\subsubsection{Memoria ROM}
+La memoria ROM (Read Only Memory - Memoria de Sólo Lectura) \cite{augusto}, es conocida como memoria no volátil ya que la información contenida en ella
+no es borrable una vez se apague el dispositivo electrónico,en este vital componente se almacenan programas firmware, es decir, programas como el
+sistema operativo, intérpretes o compiladores de lenguajes,y otros programas que no necesitan ser modificados actualizados,o alterados constantemente \cite{memorias},ya que como su nombre lo indica,esta unidad  solo posee la operacion de lectura,no tiene posibilidad de escritura.La memoria ROM es conocida como memoria no volátil ya que la información contenida en ella no es borrable al apagar el dispositivo electrónico.\\\\
+La memoria ROM se encuentra instalada en la tarjeta madre “motherboard” lugar donde se encuentra la información básica del equipo, llamada “BIOS.”
 
-\section{¿Qué hace que una memoria sea más rápida que otra? ¿Por qué esto es importante?}.\label{contenido}
+\subsubsection{Memoria cache}
+La memoria chache,es un componente que se caracterisa  principalmente por su alta velocidad de acceso,en orden de jerarquia es la memoria mas rapida, pero a su vez tiene poca capacidad de almacenamiento para datos e información.En esta memoria se almacenan temporalmente los datos que son usados con mayor frecuencia,para asi lograr tener una acceso rapido,casi inmediato\cite{arquitectura}. Dicha memoria caché esta directamente interconectada con el microprocesador y se divide en tres niveles (levels en inglés) L1, L2 y L3. \cite{augusto}, donde a medida que el nivel va aumentando su capacidad de almacenamiento va aumentado y su velocidad de acceso va disminuyendo , es decir la memoria mas veloz pero con menos capacidad es L1, y por el contrario la menos veloz pero con mayor almacenamiento la memoria cache L3.
+
+\subsubsection{Memoria RAM}
+La memoria RAM (Random Access Memory -memoria de Acceso Aleatorio),es sin duda la memoria mas conocida e importante del computador,recibe dicho nombre, dado a  que está divida en celdas de memoria, donde se almacenan temporalmente cada uno de los bits o pulsos electricos que contienen toda la informacion con la que trabaja el microprocesador \cite{augusto}.\\
+
+La memoria RAM esta diseñada para optimizar la velocidad de respuesta al momento de utilizar algún
+programa en el computador, por lo que  la información que se  necesita para llevar a cavo un proceso  se encuentra almacenada temporalmente en dicha memoria,  en consecuencia, la memoria RAM y el procesador interactúan entre si intercambiando una gran cantidad de datos en poco tiempo.\\\
+
+La memoria RAM almacena dicha información y le envía al procesador los datos que necesitan
+ser procesados, por lo tanto, mientras la memoria posea mayor velocidad de transmisión y
+mayor capacidad de almacenamiento el usuario podrá utilizar más programas a la vez y de
+manera más rápida \cite{apuntes}.\\\
+
+Pero llendo mas a fondo, cada una de las celdas de la memoria RAM, a nivel circuital esta constituida por un transistor y un capacitor, que en conjunto realizan un proceso muy importante , el cual consiste basicamente en recargar la memoria constantemente de informacion,por el cual se le denomina DRAM (Dynamic Random Access Memory -Memoria de Acceso Aleatorio Dinámica).Este tipo de memoria dinamica tiene una gran ventaja economica y en capacidad de almacenamiento frente a la memoria chache, pero a su vez,estar refrescando la informacion a cada instante hace que sea un proceso mas  lento \cite{augusto}.\\\\
+
+Por otra parte,existe la memoria denomida SRAM (Static Random Access Memory -Memoria de Acceso Aleatorio estatica),que a diferencia de la DRAM es mucho mas veloz y la informacion permanece por un tiempo mas prolongado sin ncesidad de recargarla constantemente,gracias a su cirtcuito interno,que contiene seis transistores y otros componentes,pero como se puede observar, al estar compuesto de mas elementos,ocupa mas espacio en cada celda a comparacion de una DRAM, por lo cual, es economicamente mas costosa, y ademas se obtiene una menor capacidad de almacenamiento.Es por esta razon que la memoria SRAM,es la que se usa en la memoria cache.
+
+\subsubsection{Memoria Virtual}
+Después en el nivel de jerarquías la siguiente memoria es la memoria virtual,la cual es una porción del disco duro que se dedica exclusivamente a almacenar temporalmente porciones de los programas y datos que se esten ejecutando,y que ocupan espacio innecesario en algún momento determinado , es decir, que cada vez que haya algún programa ocupando mucho volumen de la memoria RAM , pero que no se está usando,la memoria virtual se encarga de "sostenerlo" hasta próximo aviso con lo cual se aumenta la disponibilidad de almacenamiento en la RAM la cual puede ser utilizada para otros procesos\cite{augusto}.
+
+\subsubsection{Disco Duro}
+El disco duro, puede ser considerado como una memoria como las vistas anteriormente,de hecho este es el espacio donde se almacenan permanentemente todos los programas,datos e informacion que contiene el computador .A diferencia de las otras memorias,el disco duro tiene la capacidad de conservar toda la informacion almacenada aun despues de apagar el equipo,es decir,es una memoria no volatil.El disco duro al obtener una gran capacidad de almacenamiento, la busqueda dentro de el es muy lenta , lo cual hace que sea ineficiente para ser la memoria principal de un computador \cite{disco}.
+
+\subsection{Como se gestiona la memoria en un computador.} \label{contenido}
+
+\subsection{¿Qué hace que una memoria sea más rápida que otra? ¿Por qué esto es importante?}.\label{contenido}
 
 \section{Conclusiones}.\label{contenido}
-
+\subsection{}
+El proceso para lograr un almacenamiento optimo y eficiente de informacion dentro de un computador, requiere un trabajo arduo,largo y con mucha organizacion;ademas de un estudio colaborativo entre diferentes areas e ingenierias, para lograr una rapidez impresionante y un excelente resutlado.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
