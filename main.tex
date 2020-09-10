@@ -65,14 +65,21 @@ Es importante reconocer que tipo de memoria usar para una tarea especifica, por 
         
     \item \textbf{Capacidad de la memoria}:Hace referencia a la capacidad de almacenamiento o a la cantidad de información que una memoria puede acumular.La unidad de información que se usa para medir esta capacidad es el byte.\cite{arquitectura}
     
-    \item \textbf {Métodos de acceso}: Hace referencia a el método que cada tipo tiene memoria tiene para acceder a las posiciones, como por ejemplo secuencial, el cual se accede desde la última posición que se ha accedido, y continua la búsqueda en orden hasta llegar a la posición deseada, otro método es el directo, donde la memoria se divide en bloques y dentro de cada bloque se realiza un acceso secuencial hasta llegar a la posición deseada, el método aleatorio, en el cual la memoria se organiza como un vector, donde cada elemento tiene una única dirección y se realiza la búsqueda de manera aleatoria, y por último el método asociativo, donde el acceso se realiza no con la dirección de la memoria si no más bien con el contenido deseado, es decir en este método se especifica el valor a buscar y él compara el contenido de cada posición de la memoria con el contenido deseado.\cite{arquitectura}
+    \item \textbf{Tiempo de acceso y velocidad}:Cada tipo de memoria,tiene un tiempo de acceso a sus datos,en el caso de una memoria de acceso aleatorio como la memoria RAM (la cual se explica en la la seccion \ref{tipos}), es el tiempo que transcurre desde que la direccion de memoria deseada se hace visible ante los circutos de dicha memoria hasta que el el dato esta almecenado,en el caso de las de accseo no aleatorio,se considera el tiempo de acceso como aquel tiempo necesario para realizar la escritura o lectura dentro de si.Por otra parte,la velocidad de transeferencia hace referencia a el tiempo que transcurre entre leer y escribir informacion o algun dato en la memoria \cite{arquitectura}.
+    
+    \item \textbf {Métodos de acceso}: Hace referencia a el método que cada tipo tiene memoria tiene para acceder a las posiciones, como por ejemplo secuencial, el cual se accede desde la última posición que se ha accedido, y continua la búsqueda en orden hasta llegar a la posición deseada(ver figura \ref{vs2}), otro método es el directo, donde la memoria se divide en bloques y dentro de cada bloque se realiza un acceso secuencial hasta llegar a la posición deseada,luego está el método aleatorio, en el cual la memoria se organiza como un vector, donde cada elemento tiene una única dirección y se realiza la búsqueda de manera aleatoria(ver figura \ref{vs2}), y por último el método asociativo, donde el acceso se realiza no con la dirección de la memoria si no más bien con el contenido deseado, es decir en este método se especifica el valor a buscar y él compara el contenido de cada posición de la memoria con el contenido deseado.\cite{arquitectura}\\
+    
     \begin{figure}[h]
     \includegraphics[width=7cm]{accesos.png}
     \centering
     \caption{Acceso secuencial vs aleatorio}
     \label{vs2}
     \end{figure}
-    \end{itemize}
+
+
+    \item \textbf{Organización de los datos en una memoria}: Esta característica se enfoca en él como se organizan los datos de una memoria, lo cual puede darse principalmente de 2 maneras, la primera, es por medio de una unidad conocida como palabra de memoria, donde su tamaño se especia en bytes,y la otra manera es por medio de la unidad de direccionamiento, donde cada sección de la memoria se le asigna un dato con una dirección específica, y al mismo tiempo se especifica el tamaño de cada sección de dicha memoria.\cite{arquitectura}
+    
+\end{itemize}  
 
 \subsection{Tipos de memoria.} \label{tipos}%Explicar usos de cada memoria
 
@@ -85,7 +92,7 @@ sistema operativo, intérpretes o compiladores de lenguajes, y otros programas q
 La memoria ROM se encuentra instalada en la tarjeta madre “motherboard” lugar donde se encuentra la información básica del equipo, llamada “BIOS.”
 
 
-\subsubsection{Memoria cache}
+\subsubsection{Memoria caché}
 La memoria caché, es un componente que se caracteriza principalmente por su alta velocidad de acceso, en orden de jerarquía es la memoria más rápida, pero a su vez tiene poca capacidad de almacenamiento para datos e información.En esta memoria se almacenan temporalmente los datos que son usados con mayor frecuencia, para así lograr tener un acceso rápido, casi inmediato\cite{arquitectura}. Dicha memoria caché esta directamente interconectada con el microprocesador y se divide en tres niveles (levels en inglés) L1, L2 y L3. \cite{augusto}, donde a medida que el nivel va aumentando su capacidad de almacenamiento va aumentado también y su velocidad de acceso va disminuyendo, es decir la memoria más veloz pero con menos capacidad es L1, y por el contrario la menos veloz pero con mayor almacenamiento la memoria cache L3.
 
 \subsubsection{Memoria RAM}
@@ -98,25 +105,31 @@ La memoria RAM almacena dicha información y le envía al procesador los datos q
 ser procesados, por lo tanto, mientras la memoria posea mayor velocidad de transmisión y
 mayor capacidad de almacenamiento el usuario podrá utilizar más programas a la vez y de
 manera más rápida \cite{apuntes}.\\\\
-\noindent
-\textbf{DRAM}.\\
-Pero yendo más a fondo, cada una de las celdas de la memoria RAM, a nivel circuital esta constituida por un transistor y un capacitor, que en conjunto realizan un proceso muy importante , el cual consiste básicamente en recargar la memoria constantemente de información, por el cual se le denomina DRAM (Dynamic Random Access Memory -Memoria de Acceso Aleatorio Dinámica).Este tipo de memoria dinámica tiene una gran ventaja económica y en capacidad de almacenamiento frente a la memoria caché, pero a su vez, estar refrescando la información a cada instante hace que sea un proceso más  lento \cite{augusto}.\\
 
 \noindent
-\textbf{SRAM}.\\
-Por otra parte, existe la memoria denominada SRAM (Static Random Access Memory -Memoria de Acceso Aleatorio estática), que a diferencia de la DRAM es mucho más veloz y la información permanece por un tiempo más prolongado sin necesidad de recargarla constantemente, gracias a su circuito interno, que contiene seis transistores y otros componentes, pero como se puede observar, al estar compuesto de más elementos, ocupa más espacio en cada celda a comparación de una DRAM, por lo cual, es económicamente más costosa, y ademas se obtiene una menor capacidad de almacenamiento.Es por esta razón que la memoria SRAM, es la que se usa en la memoria cache.
+
 \begin{figure}[h]
-\includegraphics[width=7cm]{vs.jpg}
+\includegraphics[width=8cm]{vs.jpg}
 \centering
 \caption{SRAM vs DRAM}
 \label{vs}
 \end{figure}
 
+Pero yendo a mas a fondo,la memoria RAM se divide en dos tipos de memorias cada una con unas especificaciones distintas para realizar una tarea determinada,estas son la memoria SRAM  y memoria DRAM( ver figura \ref{vs}) \\
+
+\textbf{DRAM}.\\
+Cada una de las celdas de la memoria RAM, a nivel circuital esta constituida por un transistor y un capacitor, que en conjunto realizan un proceso muy importante , el cual consiste básicamente en recargar la memoria constantemente de información, por el cual se le denomina DRAM (Dynamic Random Access Memory -Memoria de Acceso Aleatorio Dinámica).Este tipo de memoria dinámica tiene una gran ventaja económica y en capacidad de almacenamiento frente a la memoria caché, pero a su vez, estar refrescando la información a cada instante hace que sea un proceso más  lento \cite{augusto}.\\
+
+\noindent
+\textbf{SRAM}.\\
+Por otra parte, existe la memoria denominada SRAM (Static Random Access Memory -Memoria de Acceso Aleatorio estática), que a diferencia de la DRAM es mucho más veloz y la información permanece por un tiempo más prolongado sin necesidad de recargarla constantemente, gracias a su circuito interno, que contiene seis transistores y otros componentes, pero como se puede observar, al estar compuesto de más elementos, ocupa más espacio en cada celda a comparación de una DRAM, por lo cual, es económicamente más costosa, y ademas se obtiene una menor capacidad de almacenamiento.Es por esta razón que la memoria SRAM, es la que se usa en la memoria cache.
+
+
 \subsubsection{Memoria Virtual}
 Después en el nivel de jerarquías la siguiente memoria es la memoria virtual, la cual es una porción del disco duro que se dedica exclusivamente a almacenar temporalmente porciones de los programas y datos que se estén ejecutando, y que ocupan espacio innecesario en algún momento determinado, es decir, que cada vez que haya algún programa ocupando mucho volumen de la memoria RAM, pero que no se está usando, la memoria virtual se encarga de "sostenerlo" hasta próximo aviso con lo cual se aumenta la disponibilidad de almacenamiento en la RAM la cual puede ser utilizada para otros procesos\cite{augusto}.
 
 \subsubsection{Disco Duro}
-El disco duro, puede ser considerado como una memoria al igual las nombradas anteriormente, de hecho este es el espacio donde se almacenan "permanentemente"(en condiciones ideales o hasta ser borrados) todos los programas, datos,software e información que contiene el computador.A diferencia de las otras memorias, el disco duro tiene la capacidad de conservar toda la información almacenada aun después de apagar el equipo, es decir, es una memoria no volátil.El disco duro al obtener una gran capacidad de almacenamiento en comparación a las memorias vistas anteriormente, la búsqueda dentro de él es muy lenta, lo cual hace que sea ineficiente para ser la memoria principal de un computador \cite{disco}.
+El disco duro, puede ser considerado como una memoria al igual las nombradas anteriormente, de hecho este es el espacio donde se almacenan "permanentemente"(en condiciones ideales o hasta ser borrados) todos los programas, datos,software e información que contiene el computador.A diferencia de las otras memorias, el disco duro tiene la capacidad de conservar toda la información almacenada aun después de apagar el equipo, es decir, es una memoria no volátil.El disco duro tiene una gran capacidad de almacenamiento en comparación a las memorias vistas anteriormente,la búsqueda dentro de él es muy lenta, lo cual hace que sea ineficiente para ser la memoria principal de un computador \cite{disco}.
 
 \begin{figure}[h]
 \includegraphics[width=7cm]{HDD.png}
@@ -125,6 +138,15 @@ El disco duro, puede ser considerado como una memoria al igual las nombradas ant
 \label{hdd}
 \end{figure}
 
+El disco duro consta de 5 partes Fundamentales para su funcionamiento(ver figura \ref{hdd}):
+
+\begin{itemize}
+    \item \textbf{Circuito impreso}:Conocido como circuito electrónico de controles,es el que se encarga de recibir las ordenes que le envía el computador, controlar  las operaciones del disco, y además de mantener la velocidad de rotación del motor constante.
+    \item \textbf{Motor}:Es un motor eléctrico el cual tiene como principal función hacer girar los platos del disco.
+    \item \textbf{Brazo del actuador}: Es uno de los elementos mas importantes ya que se encarga de sostener los cabezales de lectura y escritura.Estos brazos se mueven usando las leyes de el electromagnetismo,por lo cual . moverse al a velocidad de la luz.
+    \item \textbf{El cabezal}: Los cabezales  de lectura y escritura, son un conjunto de brazos alineados verticalmente que se mueven hacia dentro o fuera según convenga, todos a la vez. En la punta de dichos brazos están las cabezas de lectura/escritura, que gracias al movimiento del cabezal pueden leer tanto zonas interiores como exteriores del disco.
+    \item \textbf{Platos}:Es aquel componente que se encarga de almacenar la información por medio de unas pistas concéntricas que se encuentran en su superficie.
+\end{itemize}
 
 \subsection{Como se gestiona la memoria en un computador.} \label{contenido}
 La memoria es uno de los principales recursos de la computadora, de su correcta administración dependen las secciones de memoria de los programas que la solicitan, para ello el sistema que administra la memoria se llama administrador de memoria y su labor consiste en llevar registro de las partes de memoria que se estén utilizando y aquellas que no, con el fin de asignar espacio en memoria a los procesos cuando éstos la necesiten y liberándola cuando terminen. 
